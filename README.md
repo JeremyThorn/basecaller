@@ -24,8 +24,8 @@ to install the project dependencies.
 
 We must first generate a synthetic dataset on which to learn. The model used generates current distributions for each k-mer as
 
-Let \(k\) be odd with center index \(c = \lfloor k/2 \rfloor\).
-For a k-mer \(\mathbf{b} = (b_0,\dots,b_{k-1})\), the mean current is
+Let $k$ be odd with center index $c = \lfloor k/2 \rfloor$.
+For a k-mer $\mathbf{b} = (b_0,\dots,b_{k-1})$, the mean current is
 
 $$
 \mu(\mathbf{b}) \;=\;
@@ -44,11 +44,11 @@ $$
 
 Where:
 
-- \(I_0\) is the **current_center**.
-- \(L_c(\cdot)\) are **center levels**: equally spaced, zero-mean levels deterministically assigned to bases and scaled by `pos_scale_center`.
-- \(F_p(\cdot)\) are **flank position contributions** for \(p \ne c\): deterministic \((u-0.5)\cdot \text{pos\_scale\_flank}\).
-- \(P_p(\cdot,\cdot)\) are **adjacent pair contributions**: deterministic \((u-0.5)\cdot \text{pair\_scale}\).
-- \(u_{sd}(\mathbf{b}) \in [0,1)\) is a deterministic hash-based pseudo-uniform for the k-mer.
+- $I_0$ is the **current_center**.
+- $L_c(\cdot)$ are **center levels**: equally spaced, zero-mean levels deterministically assigned to bases and scaled by `pos_scale_center`.
+- $F_p(\cdot)$ are **flank position contributions** for $p \ne c$: deterministic $(u-0.5)\cdot \text{pos\_scale\_flank}$.
+- $P_p(\cdot,\cdot)$ are **adjacent pair contributions**: deterministic $(u-0.5)\cdot \text{pair\_scale}$.
+- $u_{sd}(\mathbf{b}) \in [0,1)$ is a deterministic hash-based pseudo-uniform for the k-mer.
 - The optional **global_jitter** perturbs the mean by a small, k-mer-specific zero-mean term.
 
 To generate the synthetic reads, run

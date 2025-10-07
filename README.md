@@ -28,27 +28,22 @@ Let $k$ be odd with center index $c=\lfloor k/2 \rfloor$.
 For a k-mer $\mathbf{b}=(b_0,\dots,b_{k-1})$, the **mean** current is
 
 $$
-\mu(\mathbf b) =
-I_0
-+ L_c\!\big(b_c\big)
-+ \sum_{p \ne c} F_p\!\big(b_p\big)
-+ \sum_{p=0}^{k-2} P_p\!\big(b_p, b_{p+1}\big)
-+ \big(u_{sd}(\mathbf b) - 1/2\big)\,\mathrm{global\_jitter},
+\mu(\mathbf b) = I_0 + L_c\!\big(b_c\big) + \sum_{p \ne c} F_p\!\big(b_p\big) + \sum_{p=0}^{k-2} P_p\!\big(b_p, b_{p+1}\big) + \big(u_{sd}(\mathbf b) - 1/2\big)\,\mathrm{global\_jitter},
 $$
 
 and the per-k-mer **standard deviation** is
 
 $$
 \sigma(\mathbf b)
-= sd_{\mathrm{lo}} + \big(sd_{\mathrm{hi}} - sd_{\mathrm{lo}}\big)\, u_{sd}(\mathbf b).
+= sd_{\mathrm{lo}} + \big(sd_{\mathrm{hi}} - sd_{\mathrm{lo}}\big) u_{sd}(\mathbf b).
 $$
 
 Where:
 
 - $I_0$ is the **current center** (``current_center``).
 - $L_c(\cdot)$ are **center levels**: equally spaced, zero-mean levels deterministically assigned to bases and scaled by ``pos_scale_center``.
-- $F_p(\cdot)$ are **flank position contributions** for $p \ne c$: deterministic $(u-0.5)\cdot \mathrm{pos\_scale\_flank}$.
-- $P_p(\cdot,\cdot)$ are **adjacent pair contributions**: deterministic $(u-0.5)\cdot \mathrm{pair\_scale}$.
+- $F_p(\cdot)$ are **flank position contributions** for $p \ne c$: deterministic $(u-0.5)\cdot$ ``pos_scale_flank``.
+- $P_p(\cdot,\cdot)$ are **adjacent pair contributions**: deterministic $(u-0.5)\cdot$ ``pair_scale``.
 - $u_{sd}(\mathbf b)\in[0,1)$ is a deterministic hash-based pseudo-uniform for the k-mer.
 - Optional ``global_jitter`` adds a small zero-mean perturbation to the mean.
 

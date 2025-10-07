@@ -28,7 +28,7 @@ Let $k$ be odd with center index $c=\lfloor k/2 \rfloor$.
 For a k-mer $\mathbf{b}=(b_0,\dots,b_{k-1})$, the **mean** current is
 
 $$
-\mu(\mathbf b) = I_0 + L_c\big(b_c\big) + \sum_{p \ne c} F_p\big(b_p\big) + \sum_{p=0}^{k-2} P_p\big(b_p, b_{p+1}\big) + \big(u_{sd}(\mathbf b) - 1/2\big),
+\mu(\mathbf b) = I_0 + L_c\big(b_c\big) + \sum_{p \ne c} F_p\big(b_p\big) + \sum_{p=0}^{k-2} P_p\big(b_p, b_{p+1}\big) + \big(u_{sd}(\mathbf b) - 1/2\big)\delta,
 $$
 
 and the per-k-mer **standard deviation** is
@@ -45,7 +45,7 @@ Where:
 - $F_p(\cdot)$ are **flank position contributions** for $p \ne c$: deterministic $(u-0.5)\cdot$ ``pos_scale_flank``.
 - $P_p(\cdot,\cdot)$ are **adjacent pair contributions**: deterministic $(u-0.5)\cdot$ ``pair_scale``.
 - $u_{sd}(\mathbf b)\in[0,1)$ is a deterministic hash-based pseudo-uniform for the k-mer.
-- Optional ``global_jitter`` adds a small zero-mean perturbation to the mean.
+- Optional $\delta$, controlled by ``global_jitter`` adds a small zero-mean perturbation to the mean.
 
 To generate the synthetic reads, run
 

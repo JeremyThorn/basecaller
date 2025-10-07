@@ -50,23 +50,25 @@ Where:
 To generate the synthetic reads, run
 
 ```bash
-python scripts/generate_reads.py
+python scripts/generate_synthetic_data.py
 ```
 
-The raw data must now be packaged into learnable windows that the model will operate on. To do this, run
+tslearn will complain that h5py is not installed, but this warning can be safely ignored as we do not use that functionality. The raw data must now be packaged into learnable windows that the model will operate on. To do this, run
 
 ```bash
 python scripts/prepare_dataset.py
 ```
 
-Finally, we are ready to train a model. To do this, run
+Finally, we are ready to train a model. This takes a few hours on the CPU, so a pre-trained model is provided for evaluation. If you do want to train your own model, run
 
 ```bash
 python scripts/run_train.py
 ```
 
-The model will begin training. This takes a few hours on the CPU, so a pre-trained model is provided for evaluation. This model obtains a character error rate of around 9\%. To evaluate this model, run
+The model will begin training. Finally, you can use either your own model or the one provided for evaluation. The provided model obtains a character error rate of around 9\%. To evaluate this model, run
 
 ```bash
-python scripts/evaluate.py
+python scripts/evaluation.py
 ```
+
+To evaluate your own model, change the ``checkpoint`` field within the config in ``evaluation.py`` to point to your model's checkpoint.

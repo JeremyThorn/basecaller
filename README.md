@@ -28,7 +28,7 @@ Let $k$ be odd with center index $c=\lfloor k/2 \rfloor$.
 For a k-mer $\mathbf{b}=(b_0,\dots,b_{k-1})$, the **mean** current is
 
 $$
-\mu(\mathbf b) = I_0 + L_c\big(b_c\big) + \sum_{p \ne c} F_p\big(b_p\big) + \sum_{p=0}^{k-2} P_p\big(b_p, b_{p+1}\big) + \big(u_{sd}(\mathbf b) - 1/2\big)\text{``global_jitter``},
+\mu(\mathbf b) = I_0 + L_c\big(b_c\big) + \sum_{p \ne c} F_p\big(b_p\big) + \sum_{p=0}^{k-2} P_p\big(b_p, b_{p+1}\big) + \big(u_{sd}(\mathbf b) - 1/2\big),
 $$
 
 and the per-k-mer **standard deviation** is

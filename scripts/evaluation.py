@@ -13,7 +13,7 @@ from run_train import greedy_decode, cer_from_batch
 CONFIG = {
     "data_root": "./data/shards",  # must contain test/ shards
     "model": "dsconv_bigru",  # "dsconv" or "dsconv_bigru"
-    "checkpoint": "./checkpoints/dsconv_bigru_best.pt",
+    "checkpoint": "./best_model/dsconv_bigru_best.pt",
     "batch": 64,
     "num_workers": 2,
 }

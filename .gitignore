@@ -1,0 +1,64 @@
+# --- Python bytecode / cache ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+# PEP 582 local packages
+__pypackages__/
+
+# --- Packaging / build artifacts ---
+build/
+dist/
+.eggs/
+*.egg-info/
+pip-wheel-metadata/
+.wheelhouse/
+
+# --- Installer / resolver logs ---
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- Test / coverage ---
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache/
+.pytest_cache/
+.hypothesis/
+
+# --- Type checkers / linters / tooling caches ---
+.mypy_cache/
+.pytype/
+.pyre/
+.ruff_cache/
+.dmypy.json
+
+# --- Jupyter / notebooks ---
+.ipynb_checkpoints/
+.jupyter/
+.lab/
+
+# --- IDE / editor junk ---
+.vscode/
+.idea/
+*.iml
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Env / secrets ---
+.env
+.env.*
+!.env.example
+
+# --- Project logs ---
+*.log
+logs/

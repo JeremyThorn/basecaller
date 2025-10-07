@@ -1,0 +1,7 @@
+numpy~=2.2.0
+pandas>=2.2.3,<3
+scipy>=1.14.1,<1.17
+scikit-learn>=1.6,<1.7
+tslearn==0.6.4
+rapidfuzz>=3.14
+torch>=2.6
